@@ -16,16 +16,13 @@ public class AmazonSearchSteps {
 	Amazon amazon = new Amazon();
 	BrowserUtils utils = new BrowserUtils();
 
-	@Given("As a user, I am on the login page")
-	public void as_a_user_i_am_on_the_login_page() {
+	@Given("As a user, I am on the amazon home page")
+	public void as_a_user_i_am_on_the_amazon_home_page() {
 		Driver.getDriver().get(DataReader.getProperty("amazonUrl"));
+		Assert.assertTrue(Driver.getDriver().getTitle().contains("Amazon"));
 	}
 
-	@Then("verify that you are on the amazon home page")
-	public void verify_that_you_are_on_the_amazon_home_page() {
-		Assert.assertTrue(Driver.getDriver().getTitle().contains("Amazon"));
-		
-	}
+	
 
 	@Then("dropdown value is by default {string}")
 	public void dropdown_value_is_by_default(String string) {
@@ -35,22 +32,25 @@ public class AmazonSearchSteps {
 
 	@When("select department Home & Kitchen")
 	public void select_department_home_kitchen() {
-		
+		Select choose = new Select(amazon.dropDown);
+		choose.selectByVisibleText("Home & Kitchen");
 	}
 
 	@And("search {string}")
 	public void search(String string) {
-
+		amazon.searchBox.sendKeys(string);
+		amazon.searchButton.click();
 	}
 
 	@Then("verify you are on {string} search results page")
 	public void verify_you_are_on_search_results_page(String string) {
-
+		Assert.assertTrue(Driver.getDriver().getTitle().contains(string));
 	}
 
-	@Then("verify you are in {string} department")
+	@And("verify you are in {string} department")
 	public void verify_you_are_in_department(String string) {
-
+		Select choose = new Select(amazon.dropDown);
+		Assert.assertTrue(choose.getFirstSelectedOption().getText().equals(string));
 	}
 
 }

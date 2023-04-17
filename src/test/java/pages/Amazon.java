@@ -15,4 +15,10 @@ public class Amazon {
 	@FindBy (id="searchDropdownBox")
 	public WebElement dropDown;
 	
+	@FindBy (id="twotabsearchtextbox")
+	public WebElement searchBox;
+	
+	@FindBy (id="nav-search-submit-button")
+	public WebElement searchButton;
+	
 }

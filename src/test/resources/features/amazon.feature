@@ -22,8 +22,7 @@ Feature: Amazon search functionality
 	
 	@test1
 	Scenario: Successful Search
-		Given As a user, I am on the login page
-		Then verify that you are on the amazon home page
+		Given As a user, I am on the amazon home page
 		Then dropdown value is by default "All Departments"
 		When select department Home & Kitchen
 		And search "coffee mug"
