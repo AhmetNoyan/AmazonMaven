@@ -1,7 +1,5 @@
 package steps_definition;
 
-
-
 import org.junit.Assert;
 import org.openqa.selenium.support.ui.Select;
 
@@ -21,8 +19,6 @@ public class AmazonSearchSteps {
 		Driver.getDriver().get(DataReader.getProperty("amazonUrl"));
 		Assert.assertTrue(Driver.getDriver().getTitle().contains("Amazon"));
 	}
-
-	
 
 	@Then("dropdown value is by default {string}")
 	public void dropdown_value_is_by_default(String string) {
