@@ -14,9 +14,8 @@ public class CreaterCommonPage {
 	
 	
 	
-	@FindBy (linkText="//h3[text()='New Item']")
-	public WebElement link;
-	
+	@FindBy (xpath = "//a[text()=' Items']")
+	public WebElement itemsLink;
 	
 	
 	

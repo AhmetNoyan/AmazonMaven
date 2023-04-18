@@ -30,8 +30,9 @@ public class LoginPage {
 	@FindBy(xpath = "//p[text()='These credentials do not match our records.']")
 	public WebElement errrorMessage;
 
-	public void Login() {
-		utils.actionsSendKeys(emailField, DataReader.getProperty("invalidUsername"));
+	public void login() {
+		utils.actionsSendKeys(emailField, DataReader.getProperty("username"));
 		utils.actionsSendKeys(password, DataReader.getProperty("password"));
+		button.click();
 	}
 }

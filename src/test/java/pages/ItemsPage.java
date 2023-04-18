@@ -13,31 +13,43 @@ public class ItemsPage {
 		
 		PageFactory.initElements(Driver.getDriver(), this);
 	}
-	@FindBy (xpath="//h3[text()='New Item']")
-	public WebElement addItemPageHeaderText;
-	
-	@FindBy (xpath="//h3[text()='Items']")
+	@FindBy (xpath = "//h3[text()='Items']")
 	public WebElement itemsPageHeaderText;
 	
-	@FindBy (xpath="//button[text()=' Add Item']")
+	@FindBy (xpath = "//button[text()=' Add Item']")
 	public WebElement addItemButton;
 	
-	@FindBy (xpath="(//input[@type='text'])[2]")
-	public WebElement nameField;
+	@FindBy (xpath = "//h3[text()='New Item']")
+	public WebElement addItemPageHeaderText;
 	
-	@FindBy (xpath="(//div[text()= 'Price ']//parent::label//following-sibling::div/input")
-	public WebElement priceFiled;
+	@FindBy (xpath = "(//input[@type='text'])[2]")
+	public WebElement addItemName;
 	
-	@FindBy (xpath="(//div[text()='select unit']//preceding::input[1]")
-	public WebElement unitField;
+	@FindBy (xpath = "//div[text()='Price ']//parent::label//following-sibling::div/input")
+	public WebElement addItemPrice;
 	
-	@FindBy (xpath="(//span[text()='pc']")
-	public WebElement pcUnit;
+	@FindBy (xpath = "//div[text()='select unit']//preceding::input[1]")
+	public WebElement addItemUnit;
 	
-	@FindBy (name="description")
-	public WebElement description;
+	@FindBy (xpath = "//span[text()='pc']")
+	public WebElement addItem_pc_unit;
 	
-	@FindBy (xpath="(//button[text()=' Save Item']")
+	@FindBy (name = "description")
+	public WebElement addItemDesciption;
+	 
+	@FindBy (xpath = "//button[text()=' Save Item']")
 	public WebElement saveItemButton;
+	
+	@FindBy (xpath = "(//a[text()='Books'])[1]")
+	public WebElement bookItem;
+	
+	@FindBy (xpath = "//h3[text()='Edit Item']")
+	public WebElement editItemHeader;
+	
+	@FindBy (xpath = "//button[text()=' Update Item']")
+	public WebElement updateButton;
+	
+	
+	
 	
 }

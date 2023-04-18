@@ -9,8 +9,8 @@ import io.cucumber.junit.CucumberOptions;
 @CucumberOptions(
 		features="./src/test/resources/features",
 		glue="steps_definition",
-		tags="@createItem",
-		dryRun=true
+		tags="@itemsTest",
+		dryRun=false
 		)
 public class TestRunners {
 
