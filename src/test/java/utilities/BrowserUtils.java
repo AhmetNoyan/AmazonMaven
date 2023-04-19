@@ -1,5 +1,7 @@
 package utilities;
 
+import java.util.Random;
+
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -40,5 +42,14 @@ public class BrowserUtils {
 		inputField.sendKeys(Keys.CONTROL + "a");
 		inputField.sendKeys(Keys.BACK_SPACE);
 
+	}
+	
+	public int randomNumber() {
+		Random rand=new Random();
+		int randomNum=rand.nextInt((999-100)+1)+100;
+		return randomNum;
+		
+		
+		
 	}
 }
