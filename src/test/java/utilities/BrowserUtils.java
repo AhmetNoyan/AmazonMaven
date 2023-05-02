@@ -41,4 +41,10 @@ public class BrowserUtils {
 		inputField.sendKeys(Keys.BACK_SPACE);
 
 	}
+	
+	//select by option
+	public void selectByIndex(WebElement selectElemnt, int index) {
+		letsSelect=new Select(selectElemnt);
+		letsSelect.selectByIndex(index);
+	}
 }
